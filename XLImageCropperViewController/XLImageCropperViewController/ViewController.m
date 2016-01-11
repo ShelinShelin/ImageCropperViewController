@@ -73,8 +73,8 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(nonnull NSDictionary<NSString *,id> *)info {
     
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    
     CGRect cropFrame = CGRectMake((self.view.frame.size.width - 200) / 2.0, (self.view.frame.size.height - 200) / 2.0, 200, 200);
+    
     XLImageCropperViewController *imageCropperViewController = [[XLImageCropperViewController alloc] initWithImage:originalImage cropFrame:cropFrame limitScaleRatio:3.0f];
     imageCropperViewController.delegate = self;
     
@@ -90,6 +90,7 @@
     
     [picker presentViewController:imageCropperViewController animated:YES completion:nil];
 }
+
 
 #pragma mark - GDImageCropperDelegate
 

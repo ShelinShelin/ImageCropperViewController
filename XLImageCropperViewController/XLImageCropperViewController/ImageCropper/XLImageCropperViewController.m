@@ -44,7 +44,7 @@ static CGFloat const kBoundceDuation = 0.2f;
     if (self = [super init]) {
         self.cropFrame = cropFrame;
         self.limitRatio = limitRatio;
-        self.originalImage = originalImage;
+        self.originalImage = [self fixOrientation:originalImage];
     }
     return self;
 }
@@ -290,12 +290,12 @@ static CGFloat const kBoundceDuation = 0.2f;
 
 - (UIImage *)getEditedImage {
     
-    CGRect squareFrame = self.cropFrame;
+    CGRect circularFrame = self.cropFrame;
     CGFloat scaleRatio = self.latestFrame.size.width / self.originalImage.size.width;
-    CGFloat x = (squareFrame.origin.x - self.latestFrame.origin.x) / scaleRatio;
-    CGFloat y = (squareFrame.origin.y - self.latestFrame.origin.y) / scaleRatio;
-    CGFloat w = squareFrame.size.width / scaleRatio;
-    CGFloat h = squareFrame.size.width / scaleRatio;
+    CGFloat x = (circularFrame.origin.x - self.latestFrame.origin.x) / scaleRatio;
+    CGFloat y = (circularFrame.origin.y - self.latestFrame.origin.y) / scaleRatio;
+    CGFloat w = circularFrame.size.width / scaleRatio;
+    CGFloat h = circularFrame.size.width / scaleRatio;
     if (self.latestFrame.size.width < self.cropFrame.size.width) {
         CGFloat newW = self.originalImage.size.width;
         CGFloat newH = newW * (self.cropFrame.size.height / self.cropFrame.size.width);
@@ -308,6 +308,7 @@ static CGFloat const kBoundceDuation = 0.2f;
         x = x + (w - newW) / 2; y = 0;
         w = newH; h = newH;
     }
+    
     //裁剪圆形
     CGRect myImageRect = CGRectMake(x, y, w, h);
     CGImageRef imageRef = self.originalImage.CGImage;
@@ -333,6 +334,84 @@ static CGFloat const kBoundceDuation = 0.2f;
     return newImage;
 }
 
+#pragma mark - fixOrientation
+
+- (UIImage *)fixOrientation:(UIImage *)originalImage {
+    
+    // No-op if the orientation is already correct
+    if (originalImage.imageOrientation == UIImageOrientationUp)
+        return originalImage;
+    
+    // We need to calculate the proper transformation to make the image upright.
+    // We do it in 2 steps: Rotate if Left/Right/Down, and then flip if Mirrored.
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    
+    switch (originalImage.imageOrientation) {
+        case UIImageOrientationDown:
+        case UIImageOrientationDownMirrored:
+            transform = CGAffineTransformTranslate(transform, originalImage.size.width, originalImage.size.height);
+            transform = CGAffineTransformRotate(transform, M_PI);
+            break;
+            
+        case UIImageOrientationLeft:
+        case UIImageOrientationLeftMirrored:
+            transform = CGAffineTransformTranslate(transform, originalImage.size.width, 0);
+            transform = CGAffineTransformRotate(transform, M_PI_2);
+            break;
+            
+        case UIImageOrientationRight:
+        case UIImageOrientationRightMirrored:
+            transform = CGAffineTransformTranslate(transform, 0, originalImage.size.height);
+            transform = CGAffineTransformRotate(transform, - M_PI_2);
+            break;
+        default:
+            break;
+    }
+    
+    switch (originalImage.imageOrientation) {
+        case UIImageOrientationUpMirrored:
+        case UIImageOrientationDownMirrored:
+            transform = CGAffineTransformTranslate(transform, originalImage.size.width, 0);
+            transform = CGAffineTransformScale(transform, -1, 1);
+            break;
+            
+        case UIImageOrientationLeftMirrored:
+        case UIImageOrientationRightMirrored:
+            transform = CGAffineTransformTranslate(transform, originalImage.size.height, 0);
+            transform = CGAffineTransformScale(transform, -1, 1);
+            break;
+        default:
+            break;
+    }
+    
+    // Now we draw the underlying CGImage into a new context, applying the transform
+    // calculated above.
+    CGContextRef ctx = CGBitmapContextCreate(NULL, originalImage.size.width, originalImage.size.height,
+                                             CGImageGetBitsPerComponent(originalImage.CGImage), 0,
+                                             CGImageGetColorSpace(originalImage.CGImage),
+                                             CGImageGetBitmapInfo(originalImage.CGImage));
+    CGContextConcatCTM(ctx, transform);
+    switch (originalImage.imageOrientation) {
+        case UIImageOrientationLeft:
+        case UIImageOrientationLeftMirrored:
+        case UIImageOrientationRight:
+        case UIImageOrientationRightMirrored:
+            // Grr...
+            CGContextDrawImage(ctx, CGRectMake(0, 0 ,originalImage.size.height,originalImage.size.width), originalImage.CGImage);
+            break;
+            
+        default:
+            CGContextDrawImage(ctx, CGRectMake(0, 0, originalImage.size.width,originalImage.size.height), originalImage.CGImage);
+            break;
+    }
+    
+    // And now we just create a new UIImage from the drawing context
+    CGImageRef cgimg = CGBitmapContextCreateImage(ctx);
+    UIImage *img = [UIImage imageWithCGImage:cgimg];
+    CGContextRelease(ctx);
+    CGImageRelease(cgimg);
+    return img;
+}
 
 
 @end

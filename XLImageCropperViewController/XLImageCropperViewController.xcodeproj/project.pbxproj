@@ -433,6 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = XLImageCropperViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.greatgate.XLImageCropperViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -444,6 +445,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = XLImageCropperViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.greatgate.XLImageCropperViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -517,6 +519,7 @@
 				FDC3EC831C43A07A001E18D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FDC3EC841C43A07A001E18D2 /* Build configuration list for PBXNativeTarget "XLImageCropperViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +528,7 @@
 				FDC3EC861C43A07A001E18D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FDC3EC871C43A07A001E18D2 /* Build configuration list for PBXNativeTarget "XLImageCropperViewControllerUITests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +537,7 @@
 				FDC3EC891C43A07A001E18D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
