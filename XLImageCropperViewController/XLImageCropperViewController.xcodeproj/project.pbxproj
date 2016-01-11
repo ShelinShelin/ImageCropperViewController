@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FDC3EC591C43A07A001E18D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC3EC581C43A07A001E18D2 /* main.m */; };
+		FDC3EC5C1C43A07A001E18D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC3EC5B1C43A07A001E18D2 /* AppDelegate.m */; };
+		FDC3EC5F1C43A07A001E18D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC3EC5E1C43A07A001E18D2 /* ViewController.m */; };
+		FDC3EC621C43A07A001E18D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC3EC601C43A07A001E18D2 /* Main.storyboard */; };
+		FDC3EC641C43A07A001E18D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDC3EC631C43A07A001E18D2 /* Assets.xcassets */; };
+		FDC3EC671C43A07A001E18D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC3EC651C43A07A001E18D2 /* LaunchScreen.storyboard */; };
+		FDC3EC721C43A07A001E18D2 /* XLImageCropperViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC3EC711C43A07A001E18D2 /* XLImageCropperViewControllerTests.m */; };
+		FDC3EC7D1C43A07A001E18D2 /* XLImageCropperViewControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC3EC7C1C43A07A001E18D2 /* XLImageCropperViewControllerUITests.m */; };
+		FDC3EC8D1C43A0C6001E18D2 /* XLImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC3EC8C1C43A0C6001E18D2 /* XLImageCropperViewController.m */; };
+		FDC3EC8F1C43A0F0001E18D2 /* selectImage.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC3EC8E1C43A0F0001E18D2 /* selectImage.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FDC3EC6E1C43A07A001E18D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDC3EC4C1C43A07A001E18D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDC3EC531C43A07A001E18D2;
+			remoteInfo = XLImageCropperViewController;
+		};
+		FDC3EC791C43A07A001E18D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDC3EC4C1C43A07A001E18D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDC3EC531C43A07A001E18D2;
+			remoteInfo = XLImageCropperViewController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FDC3EC541C43A07A001E18D2 /* XLImageCropperViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XLImageCropperViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDC3EC581C43A07A001E18D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FDC3EC5A1C43A07A001E18D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FDC3EC5B1C43A07A001E18D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FDC3EC5D1C43A07A001E18D2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FDC3EC5E1C43A07A001E18D2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FDC3EC611C43A07A001E18D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FDC3EC631C43A07A001E18D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FDC3EC661C43A07A001E18D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FDC3EC681C43A07A001E18D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDC3EC6D1C43A07A001E18D2 /* XLImageCropperViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XLImageCropperViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDC3EC711C43A07A001E18D2 /* XLImageCropperViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLImageCropperViewControllerTests.m; sourceTree = "<group>"; };
+		FDC3EC731C43A07A001E18D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDC3EC781C43A07A001E18D2 /* XLImageCropperViewControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XLImageCropperViewControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDC3EC7C1C43A07A001E18D2 /* XLImageCropperViewControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLImageCropperViewControllerUITests.m; sourceTree = "<group>"; };
+		FDC3EC7E1C43A07A001E18D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDC3EC8B1C43A0C6001E18D2 /* XLImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLImageCropperViewController.h; sourceTree = "<group>"; };
+		FDC3EC8C1C43A0C6001E18D2 /* XLImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLImageCropperViewController.m; sourceTree = "<group>"; };
+		FDC3EC8E1C43A0F0001E18D2 /* selectImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectImage.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDC3EC511C43A07A001E18D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDC3EC6A1C43A07A001E18D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDC3EC751C43A07A001E18D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FDC3EC4B1C43A07A001E18D2 = {
+			isa = PBXGroup;
+			children = (
+				FDC3EC561C43A07A001E18D2 /* XLImageCropperViewController */,
+				FDC3EC701C43A07A001E18D2 /* XLImageCropperViewControllerTests */,
+				FDC3EC7B1C43A07A001E18D2 /* XLImageCropperViewControllerUITests */,
+				FDC3EC551C43A07A001E18D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDC3EC551C43A07A001E18D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDC3EC541C43A07A001E18D2 /* XLImageCropperViewController.app */,
+				FDC3EC6D1C43A07A001E18D2 /* XLImageCropperViewControllerTests.xctest */,
+				FDC3EC781C43A07A001E18D2 /* XLImageCropperViewControllerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDC3EC561C43A07A001E18D2 /* XLImageCropperViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FDC3EC8A1C43A0A0001E18D2 /* ImageCropper */,
+				FDC3EC5A1C43A07A001E18D2 /* AppDelegate.h */,
+				FDC3EC5B1C43A07A001E18D2 /* AppDelegate.m */,
+				FDC3EC5D1C43A07A001E18D2 /* ViewController.h */,
+				FDC3EC5E1C43A07A001E18D2 /* ViewController.m */,
+				FDC3EC601C43A07A001E18D2 /* Main.storyboard */,
+				FDC3EC631C43A07A001E18D2 /* Assets.xcassets */,
+				FDC3EC651C43A07A001E18D2 /* LaunchScreen.storyboard */,
+				FDC3EC681C43A07A001E18D2 /* Info.plist */,
+				FDC3EC8E1C43A0F0001E18D2 /* selectImage.png */,
+				FDC3EC571C43A07A001E18D2 /* Supporting Files */,
+			);
+			path = XLImageCropperViewController;
+			sourceTree = "<group>";
+		};
+		FDC3EC571C43A07A001E18D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FDC3EC581C43A07A001E18D2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FDC3EC701C43A07A001E18D2 /* XLImageCropperViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				FDC3EC711C43A07A001E18D2 /* XLImageCropperViewControllerTests.m */,
+				FDC3EC731C43A07A001E18D2 /* Info.plist */,
+			);
+			path = XLImageCropperViewControllerTests;
+			sourceTree = "<group>";
+		};
+		FDC3EC7B1C43A07A001E18D2 /* XLImageCropperViewControllerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FDC3EC7C1C43A07A001E18D2 /* XLImageCropperViewControllerUITests.m */,
+				FDC3EC7E1C43A07A001E18D2 /* Info.plist */,
+			);
+			path = XLImageCropperViewControllerUITests;
+			sourceTree = "<group>";
+		};
+		FDC3EC8A1C43A0A0001E18D2 /* ImageCropper */ = {
+			isa = PBXGroup;
+			children = (
+				FDC3EC8B1C43A0C6001E18D2 /* XLImageCropperViewController.h */,
+				FDC3EC8C1C43A0C6001E18D2 /* XLImageCropperViewController.m */,
+			);
+			path = ImageCropper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDC3EC531C43A07A001E18D2 /* XLImageCropperViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDC3EC811C43A07A001E18D2 /* Build configuration list for PBXNativeTarget "XLImageCropperViewController" */;
+			buildPhases = (
+				FDC3EC501C43A07A001E18D2 /* Sources */,
+				FDC3EC511C43A07A001E18D2 /* Frameworks */,
+				FDC3EC521C43A07A001E18D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XLImageCropperViewController;
+			productName = XLImageCropperViewController;
+			productReference = FDC3EC541C43A07A001E18D2 /* XLImageCropperViewController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FDC3EC6C1C43A07A001E18D2 /* XLImageCropperViewControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDC3EC841C43A07A001E18D2 /* Build configuration list for PBXNativeTarget "XLImageCropperViewControllerTests" */;
+			buildPhases = (
+				FDC3EC691C43A07A001E18D2 /* Sources */,
+				FDC3EC6A1C43A07A001E18D2 /* Frameworks */,
+				FDC3EC6B1C43A07A001E18D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDC3EC6F1C43A07A001E18D2 /* PBXTargetDependency */,
+			);
+			name = XLImageCropperViewControllerTests;
+			productName = XLImageCropperViewControllerTests;
+			productReference = FDC3EC6D1C43A07A001E18D2 /* XLImageCropperViewControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FDC3EC771C43A07A001E18D2 /* XLImageCropperViewControllerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDC3EC871C43A07A001E18D2 /* Build configuration list for PBXNativeTarget "XLImageCropperViewControllerUITests" */;
+			buildPhases = (
+				FDC3EC741C43A07A001E18D2 /* Sources */,
+				FDC3EC751C43A07A001E18D2 /* Frameworks */,
+				FDC3EC761C43A07A001E18D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDC3EC7A1C43A07A001E18D2 /* PBXTargetDependency */,
+			);
+			name = XLImageCropperViewControllerUITests;
+			productName = XLImageCropperViewControllerUITests;
+			productReference = FDC3EC781C43A07A001E18D2 /* XLImageCropperViewControllerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDC3EC4C1C43A07A001E18D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = GreatGate;
+				TargetAttributes = {
+					FDC3EC531C43A07A001E18D2 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 6J2XGE456D;
+					};
+					FDC3EC6C1C43A07A001E18D2 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 6J2XGE456D;
+						TestTargetID = FDC3EC531C43A07A001E18D2;
+					};
+					FDC3EC771C43A07A001E18D2 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 6J2XGE456D;
+						TestTargetID = FDC3EC531C43A07A001E18D2;
+					};
+				};
+			};
+			buildConfigurationList = FDC3EC4F1C43A07A001E18D2 /* Build configuration list for PBXProject "XLImageCropperViewController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FDC3EC4B1C43A07A001E18D2;
+			productRefGroup = FDC3EC551C43A07A001E18D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDC3EC531C43A07A001E18D2 /* XLImageCropperViewController */,
+				FDC3EC6C1C43A07A001E18D2 /* XLImageCropperViewControllerTests */,
+				FDC3EC771C43A07A001E18D2 /* XLImageCropperViewControllerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDC3EC521C43A07A001E18D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDC3EC671C43A07A001E18D2 /* LaunchScreen.storyboard in Resources */,
+				FDC3EC8F1C43A0F0001E18D2 /* selectImage.png in Resources */,
+				FDC3EC641C43A07A001E18D2 /* Assets.xcassets in Resources */,
+				FDC3EC621C43A07A001E18D2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDC3EC6B1C43A07A001E18D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDC3EC761C43A07A001E18D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDC3EC501C43A07A001E18D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDC3EC5F1C43A07A001E18D2 /* ViewController.m in Sources */,
+				FDC3EC5C1C43A07A001E18D2 /* AppDelegate.m in Sources */,
+				FDC3EC8D1C43A0C6001E18D2 /* XLImageCropperViewController.m in Sources */,
+				FDC3EC591C43A07A001E18D2 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDC3EC691C43A07A001E18D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDC3EC721C43A07A001E18D2 /* XLImageCropperViewControllerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDC3EC741C43A07A001E18D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDC3EC7D1C43A07A001E18D2 /* XLImageCropperViewControllerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FDC3EC6F1C43A07A001E18D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDC3EC531C43A07A001E18D2 /* XLImageCropperViewController */;
+			targetProxy = FDC3EC6E1C43A07A001E18D2 /* PBXContainerItemProxy */;
+		};
+		FDC3EC7A1C43A07A001E18D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDC3EC531C43A07A001E18D2 /* XLImageCropperViewController */;
+			targetProxy = FDC3EC791C43A07A001E18D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FDC3EC601C43A07A001E18D2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDC3EC611C43A07A001E18D2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FDC3EC651C43A07A001E18D2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDC3EC661C43A07A001E18D2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FDC3EC7F1C43A07A001E18D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FDC3EC801C43A07A001E18D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDC3EC821C43A07A001E18D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = XLImageCropperViewController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.greatgate.XLImageCropperViewController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FDC3EC831C43A07A001E18D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = XLImageCropperViewController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.greatgate.XLImageCropperViewController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FDC3EC851C43A07A001E18D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = XLImageCropperViewControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.greatgate.XLImageCropperViewControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XLImageCropperViewController.app/XLImageCropperViewController";
+			};
+			name = Debug;
+		};
+		FDC3EC861C43A07A001E18D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = XLImageCropperViewControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.greatgate.XLImageCropperViewControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XLImageCropperViewController.app/XLImageCropperViewController";
+			};
+			name = Release;
+		};
+		FDC3EC881C43A07A001E18D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = XLImageCropperViewControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.greatgate.XLImageCropperViewControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = XLImageCropperViewController;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		FDC3EC891C43A07A001E18D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = XLImageCropperViewControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.greatgate.XLImageCropperViewControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = XLImageCropperViewController;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDC3EC4F1C43A07A001E18D2 /* Build configuration list for PBXProject "XLImageCropperViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDC3EC7F1C43A07A001E18D2 /* Debug */,
+				FDC3EC801C43A07A001E18D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDC3EC811C43A07A001E18D2 /* Build configuration list for PBXNativeTarget "XLImageCropperViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDC3EC821C43A07A001E18D2 /* Debug */,
+				FDC3EC831C43A07A001E18D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FDC3EC841C43A07A001E18D2 /* Build configuration list for PBXNativeTarget "XLImageCropperViewControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDC3EC851C43A07A001E18D2 /* Debug */,
+				FDC3EC861C43A07A001E18D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FDC3EC871C43A07A001E18D2 /* Build configuration list for PBXNativeTarget "XLImageCropperViewControllerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDC3EC881C43A07A001E18D2 /* Debug */,
+				FDC3EC891C43A07A001E18D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDC3EC4C1C43A07A001E18D2 /* Project object */;
+}
