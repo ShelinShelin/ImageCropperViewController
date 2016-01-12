@@ -38,6 +38,7 @@ static CGFloat const kBoundceDuation = 0.2f;
 @end
 
 @implementation XLImageCropperViewController
+
 #pragma mark - methods
 
 - (id)initWithImage:(UIImage *)originalImage cropFrame:(CGRect)cropFrame limitScaleRatio:(NSInteger)limitRatio {
@@ -274,10 +275,17 @@ static CGFloat const kBoundceDuation = 0.2f;
 
 - (CGRect)handleBorderOverflow:(CGRect)newFrame {
     // horizontally
-    if (newFrame.origin.x > self.cropFrame.origin.x) newFrame.origin.x = self.cropFrame.origin.x;
-    if (CGRectGetMaxX(newFrame) < self.cropFrame.size.width) newFrame.origin.x = self.cropFrame.size.width - newFrame.size.width;
+    if (newFrame.origin.x > self.cropFrame.origin.x) {
+        newFrame.origin.x = self.cropFrame.origin.x;
+    }
+    if (CGRectGetMaxX(newFrame) < CGRectGetMaxX(self.cropFrame) ) {
+
+        newFrame.origin.x = self.cropFrame.origin.x - (newFrame.size.width - self.cropFrame.size.width);
+    }
     // vertically
-    if (newFrame.origin.y > self.cropFrame.origin.y) newFrame.origin.y = self.cropFrame.origin.y;
+    if (newFrame.origin.y > self.cropFrame.origin.y) {
+        newFrame.origin.y = self.cropFrame.origin.y;
+    }
     if (CGRectGetMaxY(newFrame) < self.cropFrame.origin.y + self.cropFrame.size.height) {
         newFrame.origin.y = self.cropFrame.origin.y + self.cropFrame.size.height - newFrame.size.height;
     }
