@@ -17,18 +17,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selectImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="eEU-cx-kOB">
-                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FullSizeRender.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="eEU-cx-kOB">
+                                <rect key="frame" x="200" y="100" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="gRW-87-ONb"/>
                                     <constraint firstAttribute="height" constant="200" id="lUc-n4-Sjj"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJ2-Zb-GJF">
+                                <rect key="frame" x="242" y="373" width="117" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="117" id="T18-hw-Efb"/>
+                                    <constraint firstAttribute="height" constant="40" id="amU-w7-17j"/>
+                                </constraints>
+                                <state key="normal" title="获取照片" backgroundImage="btn_bg">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toGetPhotos:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YLr-f4-3nH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eEU-cx-kOB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7WM-p1-FDc"/>
-                            <constraint firstItem="eEU-cx-kOB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Gmk-Qv-cF0"/>
+                            <constraint firstItem="eEU-cx-kOB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="Gmk-Qv-cF0"/>
+                            <constraint firstItem="RJ2-Zb-GJF" firstAttribute="centerX" secondItem="eEU-cx-kOB" secondAttribute="centerX" id="cC1-IT-OXT"/>
+                            <constraint firstItem="RJ2-Zb-GJF" firstAttribute="top" secondItem="eEU-cx-kOB" secondAttribute="bottom" constant="73" id="o2U-cP-qOg"/>
                         </constraints>
                     </view>
                     <connections>
@@ -37,9 +52,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="341" y="186"/>
         </scene>
     </scenes>
     <resources>
-        <image name="selectImage.png" width="150" height="151"/>
+        <image name="FullSizeRender.jpg" width="640" height="617"/>
+        <image name="btn_bg" width="117" height="40"/>
     </resources>
 </document>

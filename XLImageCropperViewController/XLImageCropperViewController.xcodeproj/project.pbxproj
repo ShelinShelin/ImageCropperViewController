@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FDB237541C96DF9E001E9C60 /* FullSizeRender.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDB237531C96DF9E001E9C60 /* FullSizeRender.jpg */; };
 		FDC3EC591C43A07A001E18D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC3EC581C43A07A001E18D2 /* main.m */; };
 		FDC3EC5C1C43A07A001E18D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC3EC5B1C43A07A001E18D2 /* AppDelegate.m */; };
 		FDC3EC5F1C43A07A001E18D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC3EC5E1C43A07A001E18D2 /* ViewController.m */; };
@@ -16,7 +17,6 @@
 		FDC3EC721C43A07A001E18D2 /* XLImageCropperViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC3EC711C43A07A001E18D2 /* XLImageCropperViewControllerTests.m */; };
 		FDC3EC7D1C43A07A001E18D2 /* XLImageCropperViewControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC3EC7C1C43A07A001E18D2 /* XLImageCropperViewControllerUITests.m */; };
 		FDC3EC8D1C43A0C6001E18D2 /* XLImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC3EC8C1C43A0C6001E18D2 /* XLImageCropperViewController.m */; };
-		FDC3EC8F1C43A0F0001E18D2 /* selectImage.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC3EC8E1C43A0F0001E18D2 /* selectImage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FDB237531C96DF9E001E9C60 /* FullSizeRender.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FullSizeRender.jpg; sourceTree = "<group>"; };
 		FDC3EC541C43A07A001E18D2 /* XLImageCropperViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XLImageCropperViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC3EC581C43A07A001E18D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FDC3EC5A1C43A07A001E18D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 		FDC3EC7E1C43A07A001E18D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDC3EC8B1C43A0C6001E18D2 /* XLImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLImageCropperViewController.h; sourceTree = "<group>"; };
 		FDC3EC8C1C43A0C6001E18D2 /* XLImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLImageCropperViewController.m; sourceTree = "<group>"; };
-		FDC3EC8E1C43A0F0001E18D2 /* selectImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectImage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,9 +113,9 @@
 				FDC3EC5E1C43A07A001E18D2 /* ViewController.m */,
 				FDC3EC601C43A07A001E18D2 /* Main.storyboard */,
 				FDC3EC631C43A07A001E18D2 /* Assets.xcassets */,
+				FDB237531C96DF9E001E9C60 /* FullSizeRender.jpg */,
 				FDC3EC651C43A07A001E18D2 /* LaunchScreen.storyboard */,
 				FDC3EC681C43A07A001E18D2 /* Info.plist */,
-				FDC3EC8E1C43A0F0001E18D2 /* selectImage.png */,
 				FDC3EC571C43A07A001E18D2 /* Supporting Files */,
 			);
 			path = XLImageCropperViewController;
@@ -263,9 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDC3EC671C43A07A001E18D2 /* LaunchScreen.storyboard in Resources */,
-				FDC3EC8F1C43A0F0001E18D2 /* selectImage.png in Resources */,
 				FDC3EC641C43A07A001E18D2 /* Assets.xcassets in Resources */,
 				FDC3EC621C43A07A001E18D2 /* Main.storyboard in Resources */,
+				FDB237541C96DF9E001E9C60 /* FullSizeRender.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

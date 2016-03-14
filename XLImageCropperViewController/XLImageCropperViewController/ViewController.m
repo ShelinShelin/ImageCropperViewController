@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "XLImageCropperViewController.h"
+#define isIphoneSimulator TARGET_IPHONE_SIMULATOR
 
 @interface ViewController () <XLImageCropperDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -32,13 +33,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapView:)];
-    self.iconView.userInteractionEnabled = YES;
-    [self.iconView addGestureRecognizer:tapGestureRecognizer];
 }
 
-- (void)tapView:(UITapGestureRecognizer *)tapGestureRecognizer {
-    
+- (IBAction)toGetPhotos:(id)sender {
     UIAlertController *alertViewController = [UIAlertController alertControllerWithTitle:@"选择图片来源" message:nil preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -55,9 +52,11 @@
     [alertViewController addAction:photoAction];
     [alertViewController addAction:cancelAction];
     [self presentViewController:alertViewController animated:YES completion:nil];
+    
 }
 
 - (void)selectImageFromCamera {
+    if (isIphoneSimulator) return;
     self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
     [self presentViewController:_imagePickerController animated:YES completion:nil];
 }
@@ -95,14 +94,14 @@
 #pragma mark - GDImageCropperDelegate
 
 - (void)imageCropper:(XLImageCropperViewController *)imageCropperViewController didFinished:(UIImage *)editedImage {
-    NSLog(@"didFinished");
+//    NSLog(@"didFinished");
     self.iconView.image = editedImage;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)imageCropperDidCancel:(XLImageCropperViewController *)imageCropperViewController {
-    NSLog(@"imageCropperDidCancel");
-    [imageCropperViewController dismissViewControllerAnimated:YES completion:nil];
+//    NSLog(@"imageCropperDidCancel");
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

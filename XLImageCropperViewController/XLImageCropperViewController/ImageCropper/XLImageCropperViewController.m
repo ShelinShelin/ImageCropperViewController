@@ -12,8 +12,10 @@
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
 static CGFloat const kBoundceDuation = 0.2f;
+static CGFloat const defaultScaleWidh = 300.0f;
 
 @interface XLImageCropperViewController ()
+
 @property (nonatomic, strong) UIButton *confirmBtn;
 @property (nonatomic, strong) UIButton *cancelBtn;
 
@@ -21,17 +23,18 @@ static CGFloat const kBoundceDuation = 0.2f;
 @property (nonatomic, strong) UIView *coverView;
 @property (nonatomic, strong) UIView *circularView;
 
-@property (nonatomic, strong) UIImage *originalImage;//原始图片
-@property (nonatomic, strong) UIImage *editedImage;//裁剪后图片
+@property (nonatomic, strong) UIImage *originalImage;
+@property (nonatomic, strong) UIImage *editedImage;
 
 @property (nonatomic, assign) CGRect oldFrame;
 @property (nonatomic, assign) CGRect largeFrame;
-@property (nonatomic, assign) CGFloat limitRatio;//限制缩放比例
+@property (nonatomic, assign) CGFloat limitRatio;
 
 @property (nonatomic, assign) CGRect latestFrame;
 
-@property (nonatomic, assign) CGRect cropFrame;//裁剪尺寸
+@property (nonatomic, assign) CGRect cropFrame;
 
+//call back block
 @property (nonatomic, copy) CropperFinishedBlock finishedBlock;
 @property (nonatomic, copy) CropperCancelBlock cancelBlock;
 
@@ -39,13 +42,18 @@ static CGFloat const kBoundceDuation = 0.2f;
 
 @implementation XLImageCropperViewController
 
-#pragma mark - methods
+#pragma mark - init methods
 
 - (id)initWithImage:(UIImage *)originalImage cropFrame:(CGRect)cropFrame limitScaleRatio:(NSInteger)limitRatio {
     if (self = [super init]) {
         self.cropFrame = cropFrame;
         self.limitRatio = limitRatio;
-        self.originalImage = [self fixOrientation:originalImage];
+        
+        CGSize scaleSize = CGSizeMake(defaultScaleWidh, defaultScaleWidh * (originalImage.size.height / originalImage.size.width));
+        UIImage *smallSizeImage = [self originImage:originalImage scaleToSize:scaleSize];
+        NSData *imageData = UIImageJPEGRepresentation(smallSizeImage, 0.7);
+        self.originalImage = [self fixOrientation:[UIImage imageWithData:imageData]];
+        
     }
     return self;
 }
@@ -67,7 +75,7 @@ static CGFloat const kBoundceDuation = 0.2f;
     self.view.backgroundColor = [UIColor blackColor];
 }
 
-#pragma mark - lazy load
+#pragma mark - lazy loading
 
 - (UIImageView *)showImgView {
     if (!_showImgView) {
@@ -87,8 +95,6 @@ static CGFloat const kBoundceDuation = 0.2f;
         _coverView.backgroundColor = [UIColor blackColor];
         _coverView.userInteractionEnabled = NO;
         _coverView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-        
-        //镂空中间圆形
         [self overlayViewClip];
     }
     return _coverView;
@@ -107,7 +113,7 @@ static CGFloat const kBoundceDuation = 0.2f;
 - (UIButton *)confirmBtn {
     if (!_confirmBtn) {
         _confirmBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth - 100.0f, kScreenHeight - 50.0f, 100.0f, 50.f)];
-        _confirmBtn.backgroundColor = [UIColor blackColor];
+        _confirmBtn.backgroundColor = [UIColor clearColor];
         _confirmBtn.titleLabel.textColor = [UIColor whiteColor];
         [_confirmBtn setTitle:@"确定" forState:UIControlStateNormal];
         [_confirmBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:18.0f]];
@@ -122,7 +128,7 @@ static CGFloat const kBoundceDuation = 0.2f;
 - (UIButton *)cancelBtn {
     if (!_cancelBtn) {
         _cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, kScreenHeight - 50.0f, 100.0f, 50.0f)];
-        _cancelBtn.backgroundColor = [UIColor blackColor];
+        _cancelBtn.backgroundColor = [UIColor clearColor];
         [_cancelBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
         [_cancelBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:18.0f]];
@@ -191,6 +197,7 @@ static CGFloat const kBoundceDuation = 0.2f;
     }
     if (self.cancelBlock) {
         self.cancelBlock(self);
+        self.cancelBlock = nil;
     }
 }
 
@@ -200,6 +207,7 @@ static CGFloat const kBoundceDuation = 0.2f;
     }
     if (self.finishedBlock) {
         self.finishedBlock(self, [self getEditedImage]);
+        self.finishedBlock = nil;
     }
 }
 
@@ -237,7 +245,7 @@ static CGFloat const kBoundceDuation = 0.2f;
 - (void)panView:(UIPanGestureRecognizer *)panGestureRecognizer {
     UIView *view = self.showImgView;
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan || panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
-        // calculate accelerator
+        // calculate
         CGFloat absCenterX = self.cropFrame.origin.x + self.cropFrame.size.width / 2;
         CGFloat absCenterY = self.cropFrame.origin.y + self.cropFrame.size.height / 2;
         CGFloat scaleRatio = self.showImgView.frame.size.width / self.cropFrame.size.width;
@@ -317,7 +325,7 @@ static CGFloat const kBoundceDuation = 0.2f;
         w = newH; h = newH;
     }
     
-    //裁剪圆形
+    //Cutting circular
     CGRect myImageRect = CGRectMake(x, y, w, h);
     CGImageRef imageRef = self.originalImage.CGImage;
     CGImageRef subImageRef = CGImageCreateWithImageInRect(imageRef, myImageRect);
@@ -344,6 +352,7 @@ static CGFloat const kBoundceDuation = 0.2f;
 
 #pragma mark - fixOrientation
 
+//If the image is larger than 2 m, automatically rotate 90 degrees;Otherwise not rotating
 - (UIImage *)fixOrientation:(UIImage *)originalImage {
     
     // No-op if the orientation is already correct
@@ -419,6 +428,21 @@ static CGFloat const kBoundceDuation = 0.2f;
     CGContextRelease(ctx);
     CGImageRelease(cgimg);
     return img;
+}
+
+//Adjust the picture szie
+
+- (UIImage*)originImage:(UIImage *)image scaleToSize:(CGSize)size {
+    
+    UIGraphicsBeginImageContext(size);
+    
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height + 1)];
+    
+    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return scaledImage;
 }
 
 
